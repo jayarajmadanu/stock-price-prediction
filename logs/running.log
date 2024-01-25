@@ -67,3 +67,13 @@ x==========x]
 [2024-01-25 16:19:58,845: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2024-01-25 16:33:11,014: INFO: common: yaml file: <_io.TextIOWrapper name='config\\config.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:33:11,014: INFO: common: yaml file: <_io.TextIOWrapper name='params.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:33:11,014: INFO: common: yaml file: <_io.TextIOWrapper name='schema.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:33:11,014: INFO: common: created directory at: artifacts/raw_data/]
+[2024-01-25 16:33:11,022: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-01-25 16:33:11,022: INFO: data_ingestion: Downloading data of stock symbolSBIN from start date 2019]
+[2024-01-25 16:33:11,126: INFO: data_ingestion: Downloaded dataset into location artifacts/raw_data/dataset.csv]
+[2024-01-25 16:33:11,126: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
