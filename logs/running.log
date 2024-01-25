@@ -1,0 +1,69 @@
+[2024-01-25 16:18:45,285: INFO: common: yaml file: <_io.TextIOWrapper name='config\\config.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:18:45,285: INFO: common: yaml file: <_io.TextIOWrapper name='params.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:18:45,293: INFO: common: yaml file: <_io.TextIOWrapper name='schema.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:18:45,293: INFO: common: created directory at: artifacts/raw_data/]
+[2024-01-25 16:18:45,293: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-01-25 16:18:45,293: INFO: data_ingestion: Downloading data of stock symbolSBIN from start date 2019]
+[2024-01-25 16:18:52,420: ERROR: main: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\jayaraj\\AppData\\Local\\nsehistory-stock\\nsehistory-stock\\Cache']
+Traceback (most recent call last):
+  File "C:\Users\jayaraj\OneDrive\Documents\DataScience\Projects\stock-price-prediction\main.py", line 13, in <module>
+    data_ingestion_pipeline.main()
+  File "C:\Users\jayaraj\OneDrive\Documents\DataScience\Projects\stock-price-prediction\src\stockPrediction\pipeline\stage_01_data_ingestion_pipeline.py", line 16, in main
+    data_ingestion.downloadDataSet()
+  File "C:\Users\jayaraj\OneDrive\Documents\DataScience\Projects\stock-price-prediction\src\stockPrediction\components\data_ingestion.py", line 17, in downloadDataSet
+    df = stock_df(symbol= symbol, from_date=datetime.date(start_year,1,1), to_date=datetime.date.today(), series="EQ")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\jugaad_data\nse\history.py", line 175, in stock_df
+    raw = stock_raw(symbol, from_date, to_date, series)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\jugaad_data\nse\history.py", line 113, in stock_raw
+    return list(itertools.chain.from_iterable(chunks))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jayaraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\jugaad_data\util.py", line 108, in wrapper
+    os.makedirs(cache_dir)
+  File "<frozen os>", line 225, in makedirs
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\jayaraj\\AppData\\Local\\nsehistory-stock\\nsehistory-stock\\Cache'
+[2024-01-25 16:19:29,138: INFO: common: yaml file: <_io.TextIOWrapper name='config\\config.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:29,138: INFO: common: yaml file: <_io.TextIOWrapper name='params.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:29,138: INFO: common: yaml file: <_io.TextIOWrapper name='schema.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:29,138: INFO: common: created directory at: artifacts/raw_data/]
+[2024-01-25 16:19:29,138: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-01-25 16:19:29,138: INFO: data_ingestion: Downloading data of stock symbolSBIN from start date 2019]
+[2024-01-25 16:19:29,954: INFO: data_ingestion: Downloaded dataset into location artifacts/raw_data/dataset.csv]
+[2024-01-25 16:19:29,962: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-01-25 16:19:37,424: INFO: common: yaml file: <_io.TextIOWrapper name='config\\config.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:37,424: INFO: common: yaml file: <_io.TextIOWrapper name='params.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:37,424: INFO: common: yaml file: <_io.TextIOWrapper name='schema.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:37,424: INFO: common: created directory at: artifacts/raw_data/]
+[2024-01-25 16:19:37,424: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-01-25 16:19:37,424: INFO: data_ingestion: Downloading data of stock symbolSBIN from start date 2019]
+[2024-01-25 16:19:37,560: INFO: data_ingestion: Downloaded dataset into location artifacts/raw_data/dataset.csv]
+[2024-01-25 16:19:37,560: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-01-25 16:19:58,717: INFO: common: yaml file: <_io.TextIOWrapper name='config\\config.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:58,717: INFO: common: yaml file: <_io.TextIOWrapper name='params.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:58,725: INFO: common: yaml file: <_io.TextIOWrapper name='schema.yaml' mode='r' encoding='cp1252'> loaded successfully]
+[2024-01-25 16:19:58,725: INFO: common: created directory at: artifacts/raw_data/]
+[2024-01-25 16:19:58,725: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-01-25 16:19:58,725: INFO: data_ingestion: Downloading data of stock symbolSBIN from start date 2019]
+[2024-01-25 16:19:58,845: INFO: data_ingestion: Downloaded dataset into location artifacts/raw_data/dataset.csv]
+[2024-01-25 16:19:58,845: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
