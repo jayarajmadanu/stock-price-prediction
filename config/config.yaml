@@ -3,23 +3,24 @@ artifacts_root: artifacts/raw_data/
 data_ingestion:
   symbol: SBIN 
   local_data_file_path: artifacts/raw_data/dataset.csv
-  start_year: 2019
+  start_year: 2000
 
 data_validation:
   root_dir: artifacts/data_validation
-  dataset_file_path: artifacts/raw_data/CAR_DETAILS_FROM_CAR_DEKHO.csv
+  dataset_file_path: artifacts/raw_data/dataset.csv
   validation_status_file_path: artifacts/data_validation/status.txt
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  dataset_file_path: artifacts/raw_data/CAR_DETAILS_FROM_CAR_DEKHO.csv
+  dataset_file_path: artifacts/raw_data/dataset.csv
   processed_dataset_file_path: artifacts/data_transformation/processed_dataset.csv
-  preprocessor_obj_path: artifacts/data_transformation/proprocessor.pkl
+  preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
   dataset_summary_path: artifacts/data_transformation/dataset_summary.txt
-  test_size: 0.3
-  random_state: 10
+  train_size: 0.95
   train_dataset_file_path: artifacts/data_transformation/train.csv
   test_dataset_file_path: artifacts/data_transformation/test.csv
+  stock_symbol: SBIN 
+  window_size: 60
 
 model_trainer:
   root_dir: artifacts/model_trainer

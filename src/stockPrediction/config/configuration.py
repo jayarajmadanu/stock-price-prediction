@@ -44,10 +44,11 @@ class ConfigurationManager:
             processed_dataset_file_path= config['processed_dataset_file_path'],
             dataset_summary_path=config['dataset_summary_path'],
             targer_colunm= self.schema['targer_colunm'],
-            test_size= float(config['test_size']),
-            random_state= int(config['random_state']),
+            train_size= float(config['train_size']),
+            stock_symbol= config['stock_symbol'],
             train_dataset_file_path= config['train_dataset_file_path'],
-            test_dataset_file_path= config['test_dataset_file_path']
+            test_dataset_file_path= config['test_dataset_file_path'],
+            window_size = config['window_size']
         )
         return data_transformation_config
     

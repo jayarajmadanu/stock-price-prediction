@@ -1,0 +1,5 @@
+columns:
+  DATE: datetime64[ns]
+  CLOSE: float64
+
+targer_colunm: CLOSE

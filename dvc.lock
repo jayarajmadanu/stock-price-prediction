@@ -1,0 +1,95 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: py -m src.stockPrediction.pipeline.stage_01_data_ingestion_pipeline
+    deps:
+    - path: src/stockPrediction/components/data_ingestion.py
+      hash: md5
+      md5: 494e19a9b505df19b62035ff05599010
+      size: 882
+    - path: src/stockPrediction/pipeline/stage_01_data_ingestion_pipeline.py
+      hash: md5
+      md5: f0f03dbb3697f6599f97503dcf1d5238
+      size: 768
+    params:
+      config/config.yaml:
+        data_ingestion:
+          symbol: SBIN
+          local_data_file_path: artifacts/raw_data/dataset.csv
+          start_year: 2000
+  data_validation:
+    cmd: py -m src.stockPrediction.pipeline.stage_02_data_validation_pipeline
+    deps:
+    - path: src/stockPrediction/components/data_ingestion.py
+      hash: md5
+      md5: 494e19a9b505df19b62035ff05599010
+      size: 882
+    - path: src/stockPrediction/components/data_validation.py
+      hash: md5
+      md5: 087a6d1d0e8718d66b71352e036792cc
+      size: 1132
+    - path: src/stockPrediction/pipeline/stage_01_data_ingestion_pipeline.py
+      hash: md5
+      md5: f0f03dbb3697f6599f97503dcf1d5238
+      size: 768
+    - path: src/stockPrediction/pipeline/stage_02_data_validation_pipeline.py
+      hash: md5
+      md5: 4e5d76350b0fa58aae2c43af5c5bd026
+      size: 1008
+    params:
+      config/config.yaml:
+        data_validation:
+          root_dir: artifacts/data_validation
+          dataset_file_path: artifacts/raw_data/dataset.csv
+          validation_status_file_path: artifacts/data_validation/status.txt
+      schema.yaml:
+        columns:
+          DATE: datetime64[ns]
+          CLOSE: float64
+        targer_colunm: CLOSE
+    outs:
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: f827cf462f62848df37c5e1e94a4da74
+      size: 4
+  data_transformation:
+    cmd: py -m src.stockPrediction.pipeline.stage_03_data_transformation_pipeline
+    deps:
+    - path: src/stockPrediction/components/data_transformation.py
+      hash: md5
+      md5: 95253417ea010d43bee56b6d30b617d1
+      size: 5697
+    - path: src/stockPrediction/pipeline/stage_03_data_transformation_pipeline.py
+      hash: md5
+      md5: dd8a1df2c330323d8487a359b99d59f6
+      size: 905
+    params:
+      config/config.yaml:
+        data_transformation:
+          root_dir: artifacts/data_transformation
+          dataset_file_path: artifacts/raw_data/dataset.csv
+          processed_dataset_file_path: artifacts/data_transformation/processed_dataset.csv
+          preprocessor_obj_path: artifacts/data_transformation/preprocessor.pkl
+          dataset_summary_path: artifacts/data_transformation/dataset_summary.txt
+          train_size: 0.95
+          train_dataset_file_path: artifacts/data_transformation/train.csv
+          test_dataset_file_path: artifacts/data_transformation/test.csv
+          stock_symbol: SBIN
+          window_size: 60
+    outs:
+    - path: artifacts/data_transformation/preprocessor.pkl
+      hash: md5
+      md5: f514080cf5dcb87e2785ba55ccf5ff49
+      size: 1056
+    - path: artifacts/data_transformation/processed_dataset.csv
+      hash: md5
+      md5: 659ed61ae609341e70e30bfb5056257c
+      size: 1427324
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 460f73f6654ae679630aa6a700e3ad30
+      size: 70351
+    - path: artifacts/data_transformation/train.csv
+      hash: md5
+      md5: 1cf250027ff55ae57899472c966f7587
+      size: 1357147
